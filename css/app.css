@@ -8,7 +8,7 @@
   background-color: #f58646;
   color: white; }
   .header .app-title {
-    font-size: 30px;
+    font-size: 50px;
     padding-left: 5%;
     user-select: none; }
 
@@ -41,10 +41,14 @@
   line-height: 35px;
   color: #fff;
   background-color: #c0865d;
-  border-radius: 5px; }
+  border-radius: 5px;
+  transition: opacity 0.3s; }
+  .default-btn:hover {
+    opacity: 0.7; }
 
 .radio-btn {
-  margin-left: 10px; }
+  margin-left: 10px;
+  cursor: pointer; }
   .radio-btn:first-child {
     margin-left: 0; }
 
@@ -73,6 +77,7 @@
         height: 30px;
         line-height: 30px; }
       .task-container .tasks-list .task-card .task-detail {
+        border-radius: 0 0 5px 5px;
         height: 50px;
         line-height: 50px;
         display: flex;

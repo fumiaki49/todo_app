@@ -9,7 +9,7 @@
   background-color: rgb(245, 134, 70);
   color: white;
   & .app-title {
-    font-size: 30px;
+    font-size: 50px;
     padding-left: 5%;
     user-select: none;
   }
@@ -50,10 +50,15 @@
   color: #fff;
   background-color: rgb(192, 134, 93);
   border-radius: 5px;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .radio-btn {
   margin-left: 10px;
+  cursor: pointer;
   &:first-child {
     margin-left: 0;
   }
@@ -87,6 +92,7 @@
         line-height: 30px;
       }
       & .task-detail {
+        border-radius: 0 0 5px 5px;
         height: 50px;
         line-height: 50px;
         display: flex;
