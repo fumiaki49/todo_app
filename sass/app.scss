@@ -1,0 +1,164 @@
+.main-page {
+  background-color: rgb(250, 183, 144);
+}
+
+.header {
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  background-color: rgb(245, 134, 70);
+  color: white;
+  & .app-title {
+    font-size: 30px;
+    padding-left: 5%;
+    user-select: none;
+  }
+}
+
+.inner {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.card-inner {
+  padding: 0 15px;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.form-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.input-default {
+  height: 35px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000000;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.default-btn {
+  width: 50px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  background-color: rgb(192, 134, 93);
+  border-radius: 5px;
+}
+
+.radio-btn {
+  margin-left: 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.attention {
+  font-size: 13px;
+  font-weight: lighter;
+  background-color: red;
+  margin-left: 5px;
+  padding: 2px;
+}
+
+.main-container {
+  width: 100%;
+  padding-top: 3%;
+  display: flex;
+}
+
+.task-container {
+  width: 60%;
+  & .tasks-list{
+    width: 90%;
+    margin: 0 auto;
+    & .task-card {
+      border-radius: 5px;
+      margin-top: 10px;
+      background-color: #fff;
+      & .task-name {
+        height: 30px;
+        line-height: 30px;
+      }
+      & .task-detail {
+        height: 50px;
+        line-height: 50px;
+        display: flex;
+        justify-content: space-between;
+        background-color: whitesmoke;
+        &__text-box {
+           display: flex;
+          &__detail-text{
+            margin-left: 25px;
+            &:first-child {
+              margin-left: 0;
+            }
+            & span {
+              padding-right: 5px;
+            }
+          }
+        }
+        &__btn-box {
+          &__compleate-btn {
+            cursor: pointer;
+          }
+          &__edit-task {
+            margin-left: 15px;
+          }
+        } 
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.form-container {
+  width: 40%;
+  & .form-content {
+    width: 95%;
+    margin: 0 auto;
+    & .task-form {
+      padding: 15px 20px;
+      background-color: rgb(139, 102, 79);
+      color: #fff;
+      border-radius: 5px;
+      &__input-box {
+        margin-top: 20px;
+        &:first-child {
+          margin-top: 0;
+        }
+        &__task input {
+          width: 100%;
+        }
+        &__deadline input {
+          width: 50%;
+        }
+        &__priority__btn-box {
+          display: flex;
+        }
+        &__btn {
+          display: flex;
+          justify-content: center;
+          & .form-btn {
+            margin-left: 20px;
+            width: 40%;
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+          & .is-reset {
+            background-color: rgb(192, 175, 162);
+          }
+        }
+      }
+    }
+  }
+}

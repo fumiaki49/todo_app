@@ -1,0 +1,125 @@
+.main-page {
+  background-color: #fab790; }
+
+.header {
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  background-color: #f58646;
+  color: white; }
+  .header .app-title {
+    font-size: 30px;
+    padding-left: 5%;
+    user-select: none; }
+
+.inner {
+  width: 1400px;
+  margin: 0 auto; }
+
+.card-inner {
+  padding: 0 15px; }
+
+.strong {
+  font-weight: bold; }
+
+.form-title {
+  margin-bottom: 10px;
+  font-size: 15px; }
+
+.input-default {
+  height: 35px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000000;
+  padding: 5px;
+  font-size: 13px; }
+
+.default-btn {
+  width: 50px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  background-color: #c0865d;
+  border-radius: 5px; }
+
+.radio-btn {
+  margin-left: 10px; }
+  .radio-btn:first-child {
+    margin-left: 0; }
+
+.attention {
+  font-size: 13px;
+  font-weight: lighter;
+  background-color: red;
+  margin-left: 5px;
+  padding: 2px; }
+
+.main-container {
+  width: 100%;
+  padding-top: 3%;
+  display: flex; }
+
+.task-container {
+  width: 60%; }
+  .task-container .tasks-list {
+    width: 90%;
+    margin: 0 auto; }
+    .task-container .tasks-list .task-card {
+      border-radius: 5px;
+      margin-top: 10px;
+      background-color: #fff; }
+      .task-container .tasks-list .task-card .task-name {
+        height: 30px;
+        line-height: 30px; }
+      .task-container .tasks-list .task-card .task-detail {
+        height: 50px;
+        line-height: 50px;
+        display: flex;
+        justify-content: space-between;
+        background-color: whitesmoke; }
+        .task-container .tasks-list .task-card .task-detail__text-box {
+          display: flex; }
+          .task-container .tasks-list .task-card .task-detail__text-box__detail-text {
+            margin-left: 25px; }
+            .task-container .tasks-list .task-card .task-detail__text-box__detail-text:first-child {
+              margin-left: 0; }
+            .task-container .tasks-list .task-card .task-detail__text-box__detail-text span {
+              padding-right: 5px; }
+        .task-container .tasks-list .task-card .task-detail__btn-box__compleate-btn {
+          cursor: pointer; }
+        .task-container .tasks-list .task-card .task-detail__btn-box__edit-task {
+          margin-left: 15px; }
+      .task-container .tasks-list .task-card:first-child {
+        margin-top: 0; }
+
+.form-container {
+  width: 40%; }
+  .form-container .form-content {
+    width: 95%;
+    margin: 0 auto; }
+    .form-container .form-content .task-form {
+      padding: 15px 20px;
+      background-color: #8b664f;
+      color: #fff;
+      border-radius: 5px; }
+      .form-container .form-content .task-form__input-box {
+        margin-top: 20px; }
+        .form-container .form-content .task-form__input-box:first-child {
+          margin-top: 0; }
+        .form-container .form-content .task-form__input-box__task input {
+          width: 100%; }
+        .form-container .form-content .task-form__input-box__deadline input {
+          width: 50%; }
+        .form-container .form-content .task-form__input-box__priority__btn-box {
+          display: flex; }
+        .form-container .form-content .task-form__input-box__btn {
+          display: flex;
+          justify-content: center; }
+          .form-container .form-content .task-form__input-box__btn .form-btn {
+            margin-left: 20px;
+            width: 40%; }
+            .form-container .form-content .task-form__input-box__btn .form-btn:first-child {
+              margin-left: 0; }
+          .form-container .form-content .task-form__input-box__btn .is-reset {
+            background-color: #c0afa2; }
