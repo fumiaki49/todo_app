@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
   <link rel="stylesheet" href="css/destyle.css">
   <link rel="stylesheet" href="css/app.css">
+  <script src="js/main.js"></script>
   <title>ToDoアプリ</title>
 </head>
 <body class="main-page">
@@ -20,110 +21,51 @@
   <main class="main-container">
 
     <div class="task-container">
-      <ul class="tasks-list">
-        <li class="task-card">
-          <div class="task-name card-inner">買い物に行く</div>
-          <div class="task-detail card-inner">
-            <div class="task-detail__text-box">
-              <div class="task-detail__text-box__detail-text">
-                <p><span class="strong">優先度：</span>高</p>
-              </div>
-              <div class="task-detail__text-box__detail-text">
-                <p><span class="strong">期限：</span>2020/07/01</p>
-              </div>
-            </div>
-            <div class="task-detail__btn-box">
-              <label class="task-detail__btn-box__compleate-btn">
-                <input type="checkbox">
-                <span>完了</span>
-              </label>
-              <button class="task-detail__btn-box__edit-task default-btn">編集</button>
-            </div>
-          </div>
-        </li>
-        <li class="task-card">
-          <div class="task-name card-inner">買い物に行く</div>
-          <div class="task-detail card-inner">
-            <div class="task-detail__text-box">
-              <div class="task-detail__text-box__detail-text">
-                <p><span class="strong">優先度：</span>高</p>
-              </div>
-              <div class="task-detail__text-box__detail-text">
-                <p><span class="strong">期限：</span>2020/07/01</p>
-              </div>
-            </div>
-            <div class="task-detail__btn-box">
-              <label class="task-detail__btn-box__compleate-btn">
-                <input type="checkbox">
-                <span>完了</span>
-              </label>
-              <button class="task-detail__btn-box__edit-task default-btn">編集</button>
-            </div>
-          </div>
-        </li>
-        <li class="task-card">
-          <div class="task-name card-inner">買い物に行く</div>
-          <div class="task-detail card-inner">
-            <div class="task-detail__text-box">
-              <div class="task-detail__text-box__detail-text">
-                <p><span class="strong">優先度：</span>高</p>
-              </div>
-              <div class="task-detail__text-box__detail-text">
-                <p><span class="strong">期限：</span>2020/07/01</p>
-              </div>
-            </div>
-            <div class="task-detail__btn-box">
-              <label class="task-detail__btn-box__compleate-btn">
-                <input type="checkbox">
-                <span>完了</span>
-              </label>
-              <button class="task-detail__btn-box__edit-task default-btn">編集</button>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <ul class="tasks-list"></ul>
+      <div class="tasks-controll-box">
+        <button class="default-btn clean-all-task">全てのタスクを削除</button>
+      </div>
     </div>
     
     <div class="form-container">
       <div class="form-content">
-        <form class="task-form">
-          <div class="task-form__input-box">
-            <div class="task-form__input-box__task">
+        <form class="add-task-form" id="form">
+
+          <div class="add-task-form__input-box">
+            <div class="add-task-form__input-box__task">
               <p class="form-title strong">タスク<span class="attention">必須</span></p>
-              <input class="input-default" type="text" required placeholder="タスクを入力してください。">
+              <input class="input-default" type="text" required placeholder="タスクを入力してください。" id="task" required>
             </div>
           </div>
-          <div class="task-form__input-box">
-            <div class="task-form__input-box__deadline">
+
+          <div class="add-task-form__input-box">
+            <div class="add-task-form__input-box__deadline">
               <p class="form-title strong">期限<span class="attention">必須</span></p>
-              <input class="input-default" type="date" required>
+              <input class="input-default" type="date" required id="deadline" required>
             </div>
           </div>
-          <div class="task-form__input-box">
-            <div class="task-form__input-box__priority">
-              <p class="form-title strong">優先順位</p>
-              <div class="task-form__input-box__priority__btn-box">
-                <label class="radio-btn">
-                  <input type="radio" name="priority" checked>
-                  <span>高</span>
-                </label>
-                <label class="radio-btn">
-                  <input type="radio" name="priority">
-                  <span>中</span>
-                </label>
-                <label class="radio-btn">
-                  <input type="radio" name="priority">
-                  <span>低</span>
-                </label>
-              </div>
+
+          <div class="add-task-form__input-box">
+            <p class="form-title strong">優先度<span class="attention">必須</span></p>
+            <div class="add-task-form__input-box__btn-box">
+              <label class="select-priority">
+                <input type="radio" name="priority" value="高い" checked required>
+                <span>高い</span>
+              </label>
+              <label class="select-priority">
+                <input type="radio" name="priority" value="中">
+                <span>中</span>
+              </label>
+              <label class="select-priority">
+                <input type="radio" name="priority" value="低">
+                <span>低</span>
+              </label>
             </div>
           </div>
-          <div class="task-form__input-box">
-            <div class="task-form__input-box__btn">
-              <input class="form-btn default-btn" type="submit" value="追加">
-              <input class="form-btn is-reset default-btn" type="reset" value="リセット">
-            </div>
+          <div class="add-task-form__input-box is-align-center">
+            <input class="default-btn form-btn" type="submit" value="追加">
           </div>
+          
         </form>
       </div>
     </div>

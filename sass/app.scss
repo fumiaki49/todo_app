@@ -1,12 +1,12 @@
 .main-page {
-  background-color: rgb(250, 183, 144);
+  background-color: #fdceb1;
 }
 
 .header {
   height: 100px;
   line-height: 100px;
   width: 100%;
-  background-color: rgb(245, 134, 70);
+  background-color: #f58646;
   color: white;
   & .app-title {
     font-size: 50px;
@@ -56,6 +56,10 @@
   }
 }
 
+.is-align-center {
+  text-align: center;
+}
+
 .radio-btn {
   margin-left: 10px;
   cursor: pointer;
@@ -83,6 +87,11 @@
   & .tasks-list{
     width: 90%;
     margin: 0 auto;
+    max-height: 500px;
+    overflow: scroll;
+    padding: 20px 30px;
+    background-color: rgb(177, 120, 79);
+    border-radius: 5px 5px 0 0;
     & .task-card {
       border-radius: 5px;
       margin-top: 10px;
@@ -99,14 +108,11 @@
         justify-content: space-between;
         background-color: whitesmoke;
         &__text-box {
-           display: flex;
-          &__detail-text{
-            margin-left: 25px;
+          display: flex;
+          &__detail-text {
+            margin-left: 20px;
             &:first-child {
               margin-left: 0;
-            }
-            & span {
-              padding-right: 5px;
             }
           }
         }
@@ -124,6 +130,16 @@
       }
     }
   }
+  & .tasks-controll-box {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background-color: rgb(129, 89, 61);
+    border-radius: 0 0 5px 5px;
+    & .clean-all-task {
+      width: 40%;
+    }
+  }
 }
 
 .form-container {
@@ -131,7 +147,7 @@
   & .form-content {
     width: 95%;
     margin: 0 auto;
-    & .task-form {
+    & .add-task-form {
       padding: 15px 20px;
       background-color: rgb(139, 102, 79);
       color: #fff;
@@ -144,26 +160,19 @@
         &__task input {
           width: 100%;
         }
-        &__deadline input {
-          width: 50%;
-        }
-        &__priority__btn-box {
+        &__btn-box {
           display: flex;
-        }
-        &__btn {
-          display: flex;
-          justify-content: center;
-          & .form-btn {
-            margin-left: 20px;
-            width: 40%;
+          & .select-priority {
+            cursor: pointer;
+            margin-left: 10px;
             &:first-child {
               margin-left: 0;
             }
           }
-          & .is-reset {
-            background-color: rgb(192, 175, 162);
-          }
         }
+        & .form-btn {
+          width: 40%;
+        }        
       }
     }
   }

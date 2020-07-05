@@ -1,5 +1,5 @@
 .main-page {
-  background-color: #fab790; }
+  background-color: #fdceb1; }
 
 .header {
   height: 100px;
@@ -46,6 +46,9 @@
   .default-btn:hover {
     opacity: 0.7; }
 
+.is-align-center {
+  text-align: center; }
+
 .radio-btn {
   margin-left: 10px;
   cursor: pointer; }
@@ -68,7 +71,12 @@
   width: 60%; }
   .task-container .tasks-list {
     width: 90%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    max-height: 500px;
+    overflow: scroll;
+    padding: 20px 30px;
+    background-color: #b1784f;
+    border-radius: 5px 5px 0 0; }
     .task-container .tasks-list .task-card {
       border-radius: 5px;
       margin-top: 10px;
@@ -86,45 +94,46 @@
         .task-container .tasks-list .task-card .task-detail__text-box {
           display: flex; }
           .task-container .tasks-list .task-card .task-detail__text-box__detail-text {
-            margin-left: 25px; }
+            margin-left: 20px; }
             .task-container .tasks-list .task-card .task-detail__text-box__detail-text:first-child {
               margin-left: 0; }
-            .task-container .tasks-list .task-card .task-detail__text-box__detail-text span {
-              padding-right: 5px; }
         .task-container .tasks-list .task-card .task-detail__btn-box__compleate-btn {
           cursor: pointer; }
         .task-container .tasks-list .task-card .task-detail__btn-box__edit-task {
           margin-left: 15px; }
       .task-container .tasks-list .task-card:first-child {
         margin-top: 0; }
+  .task-container .tasks-controll-box {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background-color: #81593d;
+    border-radius: 0 0 5px 5px; }
+    .task-container .tasks-controll-box .clean-all-task {
+      width: 40%; }
 
 .form-container {
   width: 40%; }
   .form-container .form-content {
     width: 95%;
     margin: 0 auto; }
-    .form-container .form-content .task-form {
+    .form-container .form-content .add-task-form {
       padding: 15px 20px;
       background-color: #8b664f;
       color: #fff;
       border-radius: 5px; }
-      .form-container .form-content .task-form__input-box {
+      .form-container .form-content .add-task-form__input-box {
         margin-top: 20px; }
-        .form-container .form-content .task-form__input-box:first-child {
+        .form-container .form-content .add-task-form__input-box:first-child {
           margin-top: 0; }
-        .form-container .form-content .task-form__input-box__task input {
+        .form-container .form-content .add-task-form__input-box__task input {
           width: 100%; }
-        .form-container .form-content .task-form__input-box__deadline input {
-          width: 50%; }
-        .form-container .form-content .task-form__input-box__priority__btn-box {
+        .form-container .form-content .add-task-form__input-box__btn-box {
           display: flex; }
-        .form-container .form-content .task-form__input-box__btn {
-          display: flex;
-          justify-content: center; }
-          .form-container .form-content .task-form__input-box__btn .form-btn {
-            margin-left: 20px;
-            width: 40%; }
-            .form-container .form-content .task-form__input-box__btn .form-btn:first-child {
+          .form-container .form-content .add-task-form__input-box__btn-box .select-priority {
+            cursor: pointer;
+            margin-left: 10px; }
+            .form-container .form-content .add-task-form__input-box__btn-box .select-priority:first-child {
               margin-left: 0; }
-          .form-container .form-content .task-form__input-box__btn .is-reset {
-            background-color: #c0afa2; }
+        .form-container .form-content .add-task-form__input-box .form-btn {
+          width: 40%; }
