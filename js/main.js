@@ -30,6 +30,7 @@ $(function () {
 
   function readStorage() {
     var storageData = JSON.parse(localStorage.getItem(storageKey));
+    taskArray=storageData;
     $.each(storageData, function(index, data) {
       addList(data.task, data.deadline, data.priority);
     });
