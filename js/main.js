@@ -57,5 +57,7 @@ $(function () {
                               </div>
                             </li>`
     $('.tasks-list').append(taskCardTemplate);
+    $('#task').val('');
+    $('#deadline').val('');
   };
 });
