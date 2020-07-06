@@ -2,7 +2,8 @@ $(function () {
   var taskArray = [];
   var storageKey = 'savedTask';
   var storageData = JSON.parse(localStorage.getItem(storageKey));
-
+  var getTaskCard;
+  
   readStorage();
 
   $('form').submit( function(e) {
@@ -10,13 +11,15 @@ $(function () {
     var taskData = $('#task').val();
     var deadlineData = $('#deadline').val();
     var priorityData = $('input[name=priority]:checked').val();
+
     addList(taskData, deadlineData, priorityData);
     saveTask(taskData, deadlineData, priorityData);
   });
 
   $(document).on('click', '.delete-btn', function() {
-    var getTaskCard = $(this).closest('.task-card');
+    getTaskCard = $(this).closest('.task-card');
     var taskCardIndex = getTaskCard.index();
+
     getTaskCard.remove();
     taskArray.splice(taskCardIndex, 1);
     saveStorage();
@@ -24,7 +27,17 @@ $(function () {
       localStorage.clear();
       showMessage();
     }
-  })
+  });
+
+  $(document).on('change', 'input[name="complete"]', function() {
+    getTaskCard = $(this).closest('.task-card');
+    
+    if($(this).prop('checked')) {
+      getTaskCard.addClass('thin');
+    } else {
+      getTaskCard.removeClass('thin');
+    };
+  });
 
   $('.clean-all-task').on('click', function() {
     //task-listの子要素削除、localStorage、taskArrayのデータを初期化
@@ -40,6 +53,7 @@ $(function () {
       deadline: receivedDeadline,
       priority: receivedPriority
     };
+
     taskArray.push(taskObject);
     saveStorage();
   };
@@ -60,7 +74,7 @@ $(function () {
   };
 
   function showMessage() {
-    var message = `<li class ="message is-align-center">フォームから情報を入力してタスクを管理しましょう！</li>`
+    var message = `<li class ="message is-align-center">タスクはありません。フォームからタスクを作成しましょう！</li>`
     $('.tasks-list').append(message);
   };
 
@@ -78,12 +92,10 @@ $(function () {
                                 </div>
                                 <div class="task-detail__btn-box">
                                   <label class="compleate-btn">
-                                    <input type="checkbox">
-                                    <span>完了</span>
+                                    <input type="checkbox" name="complete">
+                                    <span class="cancel-select">完了</span>
                                   </label>
-                                  <button class="delete-btn default-btn">
-                                    <i class="fas fa-trash"></i>
-                                  </button>
+                                  <button class="delete-btn default-btn">削除</button>
                                 </div>
                               </div>
                             </li>`
