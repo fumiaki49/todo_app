@@ -46,6 +46,14 @@
   .default-btn:hover {
     opacity: 0.7; }
 
+.message {
+  background-color: #d42f2f;
+  border-radius: 5px;
+  color: white;
+  padding: 15px;
+  width: 70%;
+  margin: 0 auto; }
+
 .is-align-center {
   text-align: center; }
 
@@ -72,7 +80,7 @@
   .task-container .tasks-list {
     width: 90%;
     margin: 0 auto;
-    max-height: 500px;
+    height: 500px;
     overflow: scroll;
     padding: 20px 30px;
     background-color: #b1784f;
@@ -97,9 +105,9 @@
             margin-left: 20px; }
             .task-container .tasks-list .task-card .task-detail__text-box__detail-text:first-child {
               margin-left: 0; }
-        .task-container .tasks-list .task-card .task-detail__btn-box__compleate-btn {
+        .task-container .tasks-list .task-card .task-detail__btn-box .compleate-btn {
           cursor: pointer; }
-        .task-container .tasks-list .task-card .task-detail__btn-box__edit-task {
+        .task-container .tasks-list .task-card .task-detail__btn-box .delete-btn {
           margin-left: 15px; }
       .task-container .tasks-list .task-card:first-child {
         margin-top: 0; }
