@@ -9,8 +9,7 @@
   color: white; }
   .header .app-title {
     font-size: 50px;
-    padding-left: 5%;
-    user-select: none; }
+    padding-left: 5%; }
 
 .inner {
   width: 1400px;
@@ -69,6 +68,12 @@
   background-color: red;
   margin-left: 5px;
   padding: 2px; }
+
+.cancel-select {
+  user-select: none; }
+
+.thin {
+  opacity: 0.7; }
 
 .main-container {
   width: 100%;
