@@ -132,14 +132,6 @@
             }
           }
         }
-        &__btn-box {
-          & .compleate-btn {
-            cursor: pointer;
-          }
-          & .delete-btn {
-            margin-left: 15px;
-          }
-        } 
       }
       &:first-child {
         margin-top: 0;
@@ -152,8 +144,18 @@
     padding: 20px 30px;
     background-color: rgb(129, 89, 61);
     border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: space-between;
     & .clean-all-task {
       width: 40%;
+    }
+    & .task-count {
+      color: #fff;
+      height: 35px;
+      line-height: 35px;
+      & .strong {
+        padding-right: 10px;
+      }
     }
   }
 }
