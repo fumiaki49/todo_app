@@ -12,6 +12,8 @@ $(function () {
     var deadlineData = $('#deadline').val();
     var priorityData = $('input[name=priority]:checked').val();
 
+    $('#task').val('');
+    $('#deadline').val('');
     addList(taskData, deadlineData, priorityData);
     saveTask(taskData, deadlineData, priorityData);
     countTask();
@@ -34,10 +36,7 @@ $(function () {
   $('.clean-all-task').on('click', function() {
     //task-listの子要素削除、localStorage、taskArrayのデータを初期化
     if (taskArray.length === 0) {
-      swal.fire({
-        text: "タスクはありません",
-        icon: "info"
-      });
+      showAlert();
       return false;
     } else {
       swal.fire({
@@ -61,6 +60,26 @@ $(function () {
     }
   });
 
+  $('.soon').click(function () {
+    if (taskArray.length === 0) {
+      return false;
+    } else {
+      sortSoon();
+      saveStorage();
+      showAllTask();
+    };
+  })
+
+  $('.late').click(function () {
+    if (taskArray.length === 0) {
+      return false;
+    } else {
+      sortlate();
+      saveStorage();
+      showAllTask();
+    };
+  })
+
   function saveTask(receivedTask, receivedDeadline, receivedPriority) {
     var taskObject = {
       task: receivedTask, 
@@ -82,9 +101,7 @@ $(function () {
       showMessage();
     } else {
       taskArray=storageData; //ページを読み込んだ際に、既にlocalStorageにデータがあればtaskArrayに代入
-      $.each(storageData, function(index, data) {
-        addList(data.task, data.deadline, data.priority);
-      });
+      showAllTask();
     }
     countTask();
   };
@@ -96,8 +113,16 @@ $(function () {
   };
 
   function showMessage() {
+    $('.tasks-list').empty();
     var message = `<li class ="message is-align-center">タスクはありません。フォームからタスクを作成しましょう！</li>`
     $('.tasks-list').append(message);
+  };
+
+  function showAlert() {
+    swal.fire({
+      text: "タスクはありません",
+      icon: "info"
+    });
   };
 
   function addList(receivedTask, receivedDeadline, receivedPriority) {
@@ -119,7 +144,30 @@ $(function () {
                             </li>`
     $('.message').remove();
     $('.tasks-list').append(taskCardTemplate);
-    $('#task').val('');
-    $('#deadline').val('');
+  };
+
+  function showAllTask() {
+    $('.tasks-list').empty();
+    $.each(taskArray, function(index, data) {
+      addList(data.task, data.deadline, data.priority);
+    });
+  }
+
+  function sortSoon() {
+    var soon = taskArray.sort(function(a, b) {
+      if(a.deadline < b.deadline) return -1;
+      if(a.deadline > b.deadline) return +1;
+      return 0;
+    });
+    taskArray = soon;
+  };
+
+  function sortlate() {
+    var late = taskArray.sort(function(a, b) {
+      if(a.deadline < b.deadline) return +1;
+      if(a.deadline > b.deadline) return -1;
+      return 0;
+    });
+    taskArray = late;
   };
 });
