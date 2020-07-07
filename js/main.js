@@ -6,7 +6,7 @@ $(function () {
   
   readStorage();
 
-  $('form').submit( function(e) {
+  $('form').submit(function(e) {
     e.preventDefault();
     var taskData = $('#task').val();
     var deadlineData = $('#deadline').val();
@@ -14,9 +14,10 @@ $(function () {
 
     addList(taskData, deadlineData, priorityData);
     saveTask(taskData, deadlineData, priorityData);
+    countTask();
   });
 
-  $(document).on('click', '.delete-btn', function() {
+  $(document).on('click', '.complete-btn', function() {
     getTaskCard = $(this).closest('.task-card');
     var taskCardIndex = getTaskCard.index();
 
@@ -27,24 +28,37 @@ $(function () {
       localStorage.clear();
       showMessage();
     }
-  });
-
-  $(document).on('change', 'input[name="complete"]', function() {
-    getTaskCard = $(this).closest('.task-card');
-    
-    if($(this).prop('checked')) {
-      getTaskCard.addClass('thin');
-    } else {
-      getTaskCard.removeClass('thin');
-    };
+    countTask();
   });
 
   $('.clean-all-task').on('click', function() {
     //task-listの子要素削除、localStorage、taskArrayのデータを初期化
-    $('.tasks-list').empty();
-    localStorage.clear();
-    taskArray = [];
-    showMessage();
+    if (taskArray.length === 0) {
+      swal.fire({
+        text: "タスクはありません",
+        icon: "info"
+      });
+      return false;
+    } else {
+      swal.fire({
+        icon: "warning",
+        text: "全てのデータが消えます。よろしいですか？",
+        showCancelButton: true,
+        confirmButtonText: 'OK'
+      }).then(function(result) {
+        if(result.value) {
+          swal.fire({
+            icon: "success",
+            text: "削除しました。"
+          })
+          $('.tasks-list').empty();
+          localStorage.clear();
+          taskArray = [];
+          showMessage();
+          countTask();
+        }
+      });
+    }
   });
 
   function saveTask(receivedTask, receivedDeadline, receivedPriority) {
@@ -56,6 +70,7 @@ $(function () {
 
     taskArray.push(taskObject);
     saveStorage();
+    countTask();
   };
 
   function saveStorage() {
@@ -71,6 +86,13 @@ $(function () {
         addList(data.task, data.deadline, data.priority);
       });
     }
+    countTask();
+  };
+
+  function countTask() {
+    var showCount = `<p><span class="strong">タスクの合計 :</span> ${taskArray.length}</p>`
+    $('.task-count p').remove();
+    $('.task-count').append(showCount);
   };
 
   function showMessage() {
@@ -91,11 +113,7 @@ $(function () {
                                   </div>
                                 </div>
                                 <div class="task-detail__btn-box">
-                                  <label class="compleate-btn">
-                                    <input type="checkbox" name="complete">
-                                    <span class="cancel-select">完了</span>
-                                  </label>
-                                  <button class="delete-btn default-btn">削除</button>
+                                  <button class="complete-btn default-btn">完了</button>
                                 </div>
                               </div>
                             </li>`
