@@ -100,61 +100,76 @@
 
 .task-container {
   width: 60%;
-  & .tasks-list{
+  &__inner {
     width: 90%;
     margin: 0 auto;
-    height: 500px;
-    overflow: scroll;
-    padding: 20px 30px;
     background-color: rgb(177, 120, 79);
-    border-radius: 5px 5px 0 0;
-    & .task-card {
-      border-radius: 5px;
-      margin-top: 10px;
-      background-color: #fff;
-      & .task-name {
-        height: 30px;
-        line-height: 30px;
+    border-radius: 5px;
+    & .task-count {
+      color: #fff;
+      padding: 20px 30px;
+      background-color: #81593d;
+      border-radius: 5px 5px 0 0;
+      & .strong {
+        padding-right: 10px;
       }
-      & .task-detail {
-        border-radius: 0 0 5px 5px;
-        height: 50px;
-        line-height: 50px;
-        display: flex;
-        justify-content: space-between;
-        background-color: whitesmoke;
-        &__text-box {
+    }
+    & .tasks-list{
+      height: 500px;
+      overflow: scroll;
+      padding: 20px 30px;
+      & .task-card {
+        border-radius: 5px;
+        margin-top: 10px;
+        background-color: #fff;
+        & .task-name {
+          height: 30px;
+          line-height: 30px;
+        }
+        & .task-detail {
+          border-radius: 0 0 5px 5px;
+          height: 50px;
+          line-height: 50px;
           display: flex;
-          &__detail-text {
-            margin-left: 20px;
-            &:first-child {
-              margin-left: 0;
+          justify-content: space-between;
+          background-color: whitesmoke;
+          &__text-box {
+            display: flex;
+            &__detail-text {
+              margin-left: 20px;
+              &:first-child {
+                margin-left: 0;
+              }
             }
           }
         }
-      }
-      &:first-child {
-        margin-top: 0;
+        &:first-child {
+          margin-top: 0;
+        }
       }
     }
-  }
-  & .tasks-controll-box {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px 30px;
-    background-color: rgb(129, 89, 61);
-    border-radius: 0 0 5px 5px;
-    display: flex;
-    justify-content: space-between;
-    & .clean-all-task {
-      width: 40%;
-    }
-    & .task-count {
-      color: #fff;
-      height: 35px;
-      line-height: 35px;
-      & .strong {
-        padding-right: 10px;
+    & .tasks-controll-box {
+      padding: 20px 30px;
+      background-color: rgb(129, 89, 61);
+      border-radius: 0 0 5px 5px;
+      display: flex;
+      justify-content: space-between;
+      & .clean-all-task {
+        width: 40%;
+      }
+      & .sort-btn {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        & .soon {
+          background-color: rgb(214, 90, 90);
+        }
+        & .late {
+          background-color: rgb(83, 83, 182);
+        }
+        & .default-btn {
+          width: 45%;
+        }
       }
     }
   }
