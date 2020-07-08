@@ -19,64 +19,66 @@
   </header>
 
   <main class="main-container">
+    <div class="inner">
+      <div class="contents-box">
 
-    <div class="task-container">
-      <div class="task-container__inner">
-        <div class="task-count"></div>
-        <ul class="tasks-list"></ul>
-        <div class="tasks-controll-box">
-          <button class="clean-all-task default-btn">全てのタスクを削除</button>
-          <div class="sort-btn">
-            <button class="sort-btn soon default-btn">期限が近い順</button>
-            <button class="sort-btn late default-btn">期限が遠い順</button>
+        <div class="form-container">
+          <div class="form-container__wrapper">
+            <form class="add-task-form" id="form">
+              <div class="add-task-form__input-box">
+                <div class="add-task-form__input-box__task">
+                  <p class="form-title strong">タスク<span class="label-require">必須</span></p>
+                  <input class="input-default" type="text" required placeholder="タスクを入力してください。" id="task" required>
+                </div>
+              </div>
+    
+              <div class="add-task-form__input-box">
+                <div class="add-task-form__input-box__deadline">
+                  <p class="form-title strong">期限<span class="label-require">必須</span></p>
+                  <input class="input-default" type="date" required id="deadline" required>
+                </div>
+              </div>
+    
+              <div class="add-task-form__input-box">
+                <p class="form-title strong">優先度</p>
+                <div class="add-task-form__input-box__btn-box">
+                  <label class="select-priority">
+                    <input type="radio" name="priority" value="高" checked required>
+                    <span class="cancel-select">高</span>
+                  </label>
+                  <label class="select-priority">
+                    <input type="radio" name="priority" value="中">
+                    <span class="cancel-select">中</span>
+                  </label>
+                  <label class="select-priority">
+                    <input type="radio" name="priority" value="低">
+                    <span class="cancel-select">低</span>
+                  </label>
+                </div>
+              </div>
+              <div class="add-task-form__input-box is-align-center">
+                <input class="default-btn form-btn" type="submit" value="追加">
+              </div>
+            </form>
           </div>
         </div>
+
+        <div class="task-container">
+          <div class="task-container__wrapper">
+            <div class="task-count"></div>
+            <ul class="tasks-list"></ul>
+            <div class="tasks-controll-box">
+              <button class="clean-all-task default-btn">全てのタスクを削除</button>
+              <div class="sort-btn">
+                <button class="sort-btn soon default-btn">期限が近い順</button>
+                <button class="sort-btn late default-btn">期限が遠い順</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
-    
-    <div class="form-container">
-      <div class="form-content">
-        <form class="add-task-form" id="form">
-
-          <div class="add-task-form__input-box">
-            <div class="add-task-form__input-box__task">
-              <p class="form-title strong">タスク<span class="attention">必須</span></p>
-              <input class="input-default" type="text" required placeholder="タスクを入力してください。" id="task" required>
-            </div>
-          </div>
-
-          <div class="add-task-form__input-box">
-            <div class="add-task-form__input-box__deadline">
-              <p class="form-title strong">期限<span class="attention">必須</span></p>
-              <input class="input-default" type="date" required id="deadline" required>
-            </div>
-          </div>
-
-          <div class="add-task-form__input-box">
-            <p class="form-title strong">優先度</p>
-            <div class="add-task-form__input-box__btn-box">
-              <label class="select-priority">
-                <input type="radio" name="priority" value="高" checked required>
-                <span class="cancel-select">高</span>
-              </label>
-              <label class="select-priority">
-                <input type="radio" name="priority" value="中">
-                <span class="cancel-select">中</span>
-              </label>
-              <label class="select-priority">
-                <input type="radio" name="priority" value="低">
-                <span class="cancel-select">低</span>
-              </label>
-            </div>
-          </div>
-          <div class="add-task-form__input-box is-align-center">
-            <input class="default-btn form-btn" type="submit" value="追加">
-          </div>
-
-        </form>
-      </div>
-    </div>
-
   </main>
 </body>
 </html>

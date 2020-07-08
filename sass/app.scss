@@ -1,26 +1,10 @@
 .main-page {
   background-color: #fdceb1;
-}
-
-.header {
-  height: 100px;
-  line-height: 100px;
-  width: 100%;
-  background-color: #f58646;
-  color: white;
-  & .app-title {
-    font-size: 50px;
-    padding-left: 5%;
-  }
+  color: #fff;
 }
 
 .inner {
-  width: 1400px;
-  margin: 0 auto;
-}
-
-.card-inner {
-  padding: 0 15px;
+  width: 1350px;
 }
 
 .strong {
@@ -34,8 +18,6 @@
 
 .input-default {
   height: 35px;
-  border-radius: 4px;
-  background-color: #fff;
   color: #000000;
   padding: 5px;
   font-size: 13px;
@@ -47,8 +29,7 @@
   height: 35px;
   line-height: 35px;
   color: #fff;
-  background-color: rgb(192, 134, 93);
-  border-radius: 5px;
+  background-color: #c0865d;
   transition: opacity 0.3s;
   &:hover {
     opacity: 0.7;
@@ -56,30 +37,19 @@
 }
 
 .message {
-  background-color: rgb(212, 47, 47);
-  border-radius: 5px;
-  color: white;
+  background-color: #d42f2f;
   padding: 15px;
   width: 70%;
-  margin: 0 auto;
 }
 
 .is-align-center {
   text-align: center;
 }
 
-.radio-btn {
-  margin-left: 10px;
-  cursor: pointer;
-  &:first-child {
-    margin-left: 0;
-  }
-}
-
-.attention {
+.label-require {
   font-size: 13px;
   font-weight: lighter;
-  background-color: red;
+  background-color: #d42f2f;
   margin-left: 5px;
   padding: 2px;
 }
@@ -92,23 +62,63 @@
   opacity: 0.7;
 }
 
-.main-container {
-  width: 100%;
-  padding-top: 3%;
+//共通部分
+.contents-box, .inner, .message {
+  margin: 0 auto;
+}
+
+.task-count, .tasks-controll-box, .tasks-list {
+  padding: 20px 30px;
+}
+.task-count, .tasks-controll-box {
+  background-color: #81593d;
+}
+
+.task-card, .input-default {
+  background-color: #fff;
+}
+
+.task-detail, .task-detail__text-box, .tasks-controll-box, .sort-btn {
   display: flex;
 }
 
+.contents-box, .tasks-controll-box, .task-detail {
+  justify-content: space-between;
+}
+
+.input-default, .default-btn, .message, .task-container__wrapper, .form-container__wrapper,.task-card{
+  border-radius: 5px;
+}
+
+.clean-all-task, .form-btn {
+  width: 40%;
+}
+
+//ヘッダー
+.header {
+  height: 100px;
+  line-height: 100px;
+  background-color: #f58646;
+  & .app-title {
+    font-size: 50px;
+  }
+}
+
+//メイン
+.main-container {
+  padding-top: 3%;
+}
+
+.contents-box {
+  display: flex;
+}
+
+//タスク表示欄
 .task-container {
-  width: 60%;
-  &__inner {
-    width: 90%;
-    margin: 0 auto;
-    background-color: rgb(177, 120, 79);
-    border-radius: 5px;
+  width: 55%;
+  &__wrapper {
+    background-color: #b1784f;
     & .task-count {
-      color: #fff;
-      padding: 20px 30px;
-      background-color: #81593d;
       border-radius: 5px 5px 0 0;
       & .strong {
         padding-right: 10px;
@@ -117,11 +127,15 @@
     & .tasks-list{
       height: 500px;
       overflow: scroll;
-      padding: 20px 30px;
       & .task-card {
-        border-radius: 5px;
         margin-top: 10px;
-        background-color: #fff;
+        color: #000000;
+        &:first-child {
+          margin-top: 0;
+        }
+        & .card-inner {
+          padding: 0 15px;
+        }
         & .task-name {
           height: 30px;
           line-height: 30px;
@@ -130,42 +144,26 @@
           border-radius: 0 0 5px 5px;
           height: 50px;
           line-height: 50px;
-          display: flex;
-          justify-content: space-between;
-          background-color: whitesmoke;
-          &__text-box {
-            display: flex;
-            &__detail-text {
-              margin-left: 20px;
-              &:first-child {
-                margin-left: 0;
-              }
+          background-color: #eeeeee;
+          & .detail-text {
+            margin-left: 20px;
+            &:first-child {
+              margin-left: 0;
             }
           }
-        }
-        &:first-child {
-          margin-top: 0;
         }
       }
     }
     & .tasks-controll-box {
-      padding: 20px 30px;
-      background-color: rgb(129, 89, 61);
       border-radius: 0 0 5px 5px;
-      display: flex;
-      justify-content: space-between;
-      & .clean-all-task {
-        width: 40%;
-      }
       & .sort-btn {
         width: 50%;
-        display: flex;
         justify-content: space-evenly;
         & .soon {
-          background-color: rgb(214, 90, 90);
+          background-color: #d65a5a;
         }
         & .late {
-          background-color: rgb(83, 83, 182);
+          background-color: #5353b6;
         }
         & .default-btn {
           width: 45%;
@@ -175,16 +173,14 @@
   }
 }
 
+//フォーム
 .form-container {
   width: 40%;
-  & .form-content {
-    width: 95%;
-    margin: 0 auto;
+  &__wrapper {
+    background-color: #8b664f;
     & .add-task-form {
       padding: 15px 20px;
-      background-color: rgb(139, 102, 79);
-      color: #fff;
-      border-radius: 5px;
+      
       &__input-box {
         margin-top: 20px;
         &:first-child {
@@ -194,7 +190,6 @@
           width: 100%;
         }
         &__btn-box {
-          display: flex;
           & .select-priority {
             cursor: pointer;
             margin-left: 10px;
@@ -202,9 +197,6 @@
               margin-left: 0;
             }
           }
-        }
-        & .form-btn {
-          width: 40%;
         }        
       }
     }

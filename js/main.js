@@ -130,10 +130,10 @@ $(function () {
                               <div class="task-name card-inner">${receivedTask}</div>
                               <div class="task-detail card-inner">
                                 <div class="task-detail__text-box">
-                                  <div class="task-detail__text-box__detail-text">
+                                  <div class="detail-text">
                                     <p><span class="strong">優先度：</span>${receivedPriority}</p>
                                   </div>
-                                  <div class="task-detail__text-box__detail-text">
+                                  <div class="detail-text">
                                     <p><span class="strong">期限：</span>${receivedDeadline}</p>
                                   </div>
                                 </div>
