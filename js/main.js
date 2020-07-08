@@ -1,16 +1,16 @@
 $(function () {
-  var taskArray = [];
-  var storageKey = 'savedTask';
-  var storageData = JSON.parse(localStorage.getItem(storageKey));
-  var getTaskCard;
+  let taskArray = [];
+  let storageKey = 'savedTask';
+  let storageData = JSON.parse(localStorage.getItem(storageKey));
+  let getTaskCard;
   
   readStorage();
 
   $('form').submit(function(e) {
     e.preventDefault();
-    var taskData = $('#task').val();
-    var deadlineData = $('#deadline').val();
-    var priorityData = $('input[name=priority]:checked').val();
+    let taskData = $('#task').val();
+    let deadlineData = $('#deadline').val();
+    let priorityData = $('input[name=priority]:checked').val();
 
     $('#task').val('');
     $('#deadline').val('');
@@ -21,7 +21,7 @@ $(function () {
 
   $(document).on('click', '.complete-btn', function() {
     getTaskCard = $(this).closest('.task-card');
-    var taskCardIndex = getTaskCard.index();
+    let taskCardIndex = getTaskCard.index();
 
     getTaskCard.remove();
     taskArray.splice(taskCardIndex, 1);
@@ -49,7 +49,7 @@ $(function () {
           swal.fire({
             icon: "success",
             text: "削除しました。"
-          })
+          });
           $('.tasks-list').empty();
           localStorage.clear();
           taskArray = [];
@@ -67,8 +67,8 @@ $(function () {
       sortSoon();
       saveStorage();
       showAllTask();
-    };
-  })
+    }
+  });
 
   $('.late').click(function () {
     if (taskArray.length === 0) {
@@ -77,11 +77,11 @@ $(function () {
       sortlate();
       saveStorage();
       showAllTask();
-    };
-  })
+    }
+  });
 
   function saveTask(receivedTask, receivedDeadline, receivedPriority) {
-    var taskObject = {
+    let taskObject = {
       task: receivedTask, 
       deadline: receivedDeadline,
       priority: receivedPriority
@@ -90,11 +90,11 @@ $(function () {
     taskArray.push(taskObject);
     saveStorage();
     countTask();
-  };
+  }
 
   function saveStorage() {
     localStorage.setItem(storageKey, JSON.stringify(taskArray));
-  };
+  }
 
   function readStorage() {
     if(storageData === null) {
@@ -104,29 +104,29 @@ $(function () {
       showAllTask();
     }
     countTask();
-  };
+  }
 
   function countTask() {
-    var showCount = `<p><span class="strong">タスクの合計 :</span> ${taskArray.length}</p>`
+    let showCount = `<p><span class="strong">タスクの合計 :</span> ${taskArray.length}</p>`;
     $('.task-count p').remove();
     $('.task-count').append(showCount);
-  };
+  }
 
   function showMessage() {
     $('.tasks-list').empty();
-    var message = `<li class ="message is-align-center">タスクはありません。フォームからタスクを作成しましょう！</li>`
+    let message = `<li class ="message is-align-center">タスクはありません。フォームからタスクを作成しましょう！</li>`
     $('.tasks-list').append(message);
-  };
+  }
 
   function showAlert() {
     swal.fire({
       text: "タスクはありません",
       icon: "info"
     });
-  };
+  }
 
   function addList(receivedTask, receivedDeadline, receivedPriority) {
-    var taskCardTemplate = `<li class="task-card">
+    let taskCardTemplate = `<li class="task-card">
                               <div class="task-name card-inner">${receivedTask}</div>
                               <div class="task-detail card-inner">
                                 <div class="task-detail__text-box">
@@ -141,10 +141,10 @@ $(function () {
                                   <button class="complete-btn default-btn">完了</button>
                                 </div>
                               </div>
-                            </li>`
+                            </li>`;
     $('.message').remove();
     $('.tasks-list').append(taskCardTemplate);
-  };
+  }
 
   function showAllTask() {
     $('.tasks-list').empty();
@@ -154,20 +154,20 @@ $(function () {
   }
 
   function sortSoon() {
-    var soon = taskArray.sort(function(a, b) {
+    let soon = taskArray.sort(function(a, b) {
       if(a.deadline < b.deadline) return -1;
       if(a.deadline > b.deadline) return +1;
       return 0;
     });
     taskArray = soon;
-  };
+  }
 
   function sortlate() {
-    var late = taskArray.sort(function(a, b) {
+    let late = taskArray.sort(function(a, b) {
       if(a.deadline < b.deadline) return +1;
       if(a.deadline > b.deadline) return -1;
       return 0;
     });
     taskArray = late;
-  };
+  }
 });
