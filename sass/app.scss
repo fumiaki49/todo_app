@@ -118,57 +118,60 @@
   width: 55%;
   &__wrapper {
     background-color: #b1784f;
-    & .task-count {
-      border-radius: 5px 5px 0 0;
-      & .strong {
-        padding-right: 10px;
-      }
+  }
+}
+
+.task-count {
+  border-radius: 5px 5px 0 0;
+  & .strong {
+    padding-right: 10px;
+  }
+}
+
+.tasks-list{
+  height: 500px;
+  overflow: scroll;
+  & .task-card {
+    margin-top: 10px;
+    color: #000000;
+    &:first-child {
+      margin-top: 0;
     }
-    & .tasks-list{
-      height: 500px;
-      overflow: scroll;
-      & .task-card {
-        margin-top: 10px;
-        color: #000000;
-        &:first-child {
-          margin-top: 0;
-        }
-        & .card-inner {
-          padding: 0 15px;
-        }
-        & .task-name {
-          height: 30px;
-          line-height: 30px;
-        }
-        & .task-detail {
-          border-radius: 0 0 5px 5px;
-          height: 50px;
-          line-height: 50px;
-          background-color: #eeeeee;
-          & .detail-text {
-            margin-left: 20px;
-            &:first-child {
-              margin-left: 0;
-            }
-          }
-        }
-      }
+    & .card-inner {
+      padding: 0 15px;
     }
-    & .tasks-controll-box {
+    & .task-name {
+      height: 30px;
+      line-height: 30px;
+    }
+    & .task-detail {
       border-radius: 0 0 5px 5px;
-      & .sort-btn {
-        width: 50%;
-        justify-content: space-evenly;
-        & .soon {
-          background-color: #d65a5a;
-        }
-        & .late {
-          background-color: #5353b6;
-        }
-        & .default-btn {
-          width: 45%;
+      height: 50px;
+      line-height: 50px;
+      background-color: #eeeeee;
+      & .detail-text {
+        margin-left: 20px;
+        &:first-child {
+          margin-left: 0;
         }
       }
+    }
+  }
+}
+
+.tasks-controll-box {
+  border-radius: 0 0 5px 5px;
+  & .sort-btn {
+    width: 50%;
+    justify-content: space-evenly;
+    & .soon {
+      background-color: #d65a5a;
+    }
+    & .late {
+      background-color: #5353b6;
+    }
+    & .default-btn {
+      width: 45%;
     }
   }
 }
@@ -178,27 +181,28 @@
   width: 40%;
   &__wrapper {
     background-color: #8b664f;
-    & .add-task-form {
-      padding: 15px 20px;
-      
-      &__input-box {
-        margin-top: 20px;
-        &:first-child {
-          margin-top: 0;
-        }
-        &__task input {
-          width: 100%;
-        }
-        &__btn-box {
-          & .select-priority {
-            cursor: pointer;
-            margin-left: 10px;
-            &:first-child {
-              margin-left: 0;
-            }
-          }
-        }        
-      }
+  }
+}
+
+.add-task-form {
+  padding: 15px 20px;
+  
+  &__input-box {
+    margin-top: 20px;
+    &:first-child {
+      margin-top: 0;
     }
+    &__task input {
+      width: 100%;
+    }
+    &__btn-box {
+      & .select-priority {
+        cursor: pointer;
+        margin-left: 10px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }        
   }
 }

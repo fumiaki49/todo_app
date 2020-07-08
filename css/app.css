@@ -91,58 +91,62 @@
   width: 55%; }
   .task-container__wrapper {
     background-color: #b1784f; }
-    .task-container__wrapper .task-count {
-      border-radius: 5px 5px 0 0; }
-      .task-container__wrapper .task-count .strong {
-        padding-right: 10px; }
-    .task-container__wrapper .tasks-list {
-      height: 500px;
-      overflow: scroll; }
-      .task-container__wrapper .tasks-list .task-card {
-        margin-top: 10px;
-        color: #000000; }
-        .task-container__wrapper .tasks-list .task-card:first-child {
-          margin-top: 0; }
-        .task-container__wrapper .tasks-list .task-card .card-inner {
-          padding: 0 15px; }
-        .task-container__wrapper .tasks-list .task-card .task-name {
-          height: 30px;
-          line-height: 30px; }
-        .task-container__wrapper .tasks-list .task-card .task-detail {
-          border-radius: 0 0 5px 5px;
-          height: 50px;
-          line-height: 50px;
-          background-color: #eeeeee; }
-          .task-container__wrapper .tasks-list .task-card .task-detail .detail-text {
-            margin-left: 20px; }
-            .task-container__wrapper .tasks-list .task-card .task-detail .detail-text:first-child {
-              margin-left: 0; }
-    .task-container__wrapper .tasks-controll-box {
-      border-radius: 0 0 5px 5px; }
-      .task-container__wrapper .tasks-controll-box .sort-btn {
-        width: 50%;
-        justify-content: space-evenly; }
-        .task-container__wrapper .tasks-controll-box .sort-btn .soon {
-          background-color: #d65a5a; }
-        .task-container__wrapper .tasks-controll-box .sort-btn .late {
-          background-color: #5353b6; }
-        .task-container__wrapper .tasks-controll-box .sort-btn .default-btn {
-          width: 45%; }
+
+.task-count {
+  border-radius: 5px 5px 0 0; }
+  .task-count .strong {
+    padding-right: 10px; }
+
+.tasks-list {
+  height: 500px;
+  overflow: scroll; }
+  .tasks-list .task-card {
+    margin-top: 10px;
+    color: #000000; }
+    .tasks-list .task-card:first-child {
+      margin-top: 0; }
+    .tasks-list .task-card .card-inner {
+      padding: 0 15px; }
+    .tasks-list .task-card .task-name {
+      height: 30px;
+      line-height: 30px; }
+    .tasks-list .task-card .task-detail {
+      border-radius: 0 0 5px 5px;
+      height: 50px;
+      line-height: 50px;
+      background-color: #eeeeee; }
+      .tasks-list .task-card .task-detail .detail-text {
+        margin-left: 20px; }
+        .tasks-list .task-card .task-detail .detail-text:first-child {
+          margin-left: 0; }
+
+.tasks-controll-box {
+  border-radius: 0 0 5px 5px; }
+  .tasks-controll-box .sort-btn {
+    width: 50%;
+    justify-content: space-evenly; }
+    .tasks-controll-box .sort-btn .soon {
+      background-color: #d65a5a; }
+    .tasks-controll-box .sort-btn .late {
+      background-color: #5353b6; }
+    .tasks-controll-box .sort-btn .default-btn {
+      width: 45%; }
 
 .form-container {
   width: 40%; }
   .form-container__wrapper {
     background-color: #8b664f; }
-    .form-container__wrapper .add-task-form {
-      padding: 15px 20px; }
-      .form-container__wrapper .add-task-form__input-box {
-        margin-top: 20px; }
-        .form-container__wrapper .add-task-form__input-box:first-child {
-          margin-top: 0; }
-        .form-container__wrapper .add-task-form__input-box__task input {
-          width: 100%; }
-        .form-container__wrapper .add-task-form__input-box__btn-box .select-priority {
-          cursor: pointer;
-          margin-left: 10px; }
-          .form-container__wrapper .add-task-form__input-box__btn-box .select-priority:first-child {
-            margin-left: 0; }
+
+.add-task-form {
+  padding: 15px 20px; }
+  .add-task-form__input-box {
+    margin-top: 20px; }
+    .add-task-form__input-box:first-child {
+      margin-top: 0; }
+    .add-task-form__input-box__task input {
+      width: 100%; }
+    .add-task-form__input-box__btn-box .select-priority {
+      cursor: pointer;
+      margin-left: 10px; }
+      .add-task-form__input-box__btn-box .select-priority:first-child {
+        margin-left: 0; }
