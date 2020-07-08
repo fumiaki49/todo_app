@@ -1,0 +1,63 @@
+@media screen and (max-width: 1350px) {
+  .inner {
+    width: 97%;
+  }
+
+  .contents-box {
+    display: block;
+     & .form-container, .task-container {
+      width: 95%;
+      margin: 0 auto;
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 896px) and (min-width: 481px), (max-width: 480px) {
+  .task-container {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 80px;
+    line-height: 80px;
+    & .app-title {
+      font-size: 40px;
+    }
+  }
+
+  .form-container, .task-container {
+    width: 100%;
+    margin: unset;
+  }
+
+  .tasks-list, .tasks-controll-box, .task-count {
+    padding: 20px 5px;
+  }
+
+  .tasks-controll-box {
+    justify-content: center;
+    & .clean-all-task {
+      width: 45%;
+    }
+    & .sort-btn {
+      display: block;
+      width: 45%;
+      & .default-btn {
+        width: 70%;
+        float: right;
+        &:first-child {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  
+  .message {
+    width: 100%;
+  }
+}
