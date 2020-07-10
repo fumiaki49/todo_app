@@ -1,8 +1,8 @@
 module.exports = {
   mode: 'production',
-  entry: './js/app.js',
+  entry: './src/js/app.js',
   output: {
-    path: `${__dirname}/js`,
+    path: `${__dirname}/dist/js`,
     filename: 'converted_app.js'
   },
   module: {
