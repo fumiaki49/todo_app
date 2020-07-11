@@ -1,5 +1,6 @@
 module.exports = {
   mode: 'production',
+  watch: true,
   entry: './src/js/app.js',
   output: {
     path: `${__dirname}/dist/js`,
