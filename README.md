@@ -1,4 +1,6 @@
 # ToDoアプリ
+- URL: https://fumiaki49.github.io/todo_app/dist/index.html
+
 ## 概要
 - タスク管理アプリです。タスクを作成する際に期限と優先順位を設定できます。
 - 作成したタスクのデータはlocalstorageへ保存されます。
