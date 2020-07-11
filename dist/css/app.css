@@ -62,7 +62,7 @@
 .task-card, .input-default {
   background-color: #fff; }
 
-.task-detail, .task-detail__text-box, .tasks-controll-box, .sort-btn {
+.task-detail, .task-detail__text-box, .tasks-controll-box {
   display: flex; }
 
 .contents-box, .tasks-controll-box, .task-detail {
@@ -123,14 +123,8 @@
 .tasks-controll-box {
   border-radius: 0 0 5px 5px; }
   .tasks-controll-box .sort-btn {
-    width: 50%;
-    justify-content: space-evenly; }
-    .tasks-controll-box .sort-btn .soon {
-      background-color: #d65a5a; }
-    .tasks-controll-box .sort-btn .late {
-      background-color: #5353b6; }
-    .tasks-controll-box .sort-btn .default-btn {
-      width: 45%; }
+    background-color: #d65a5a;
+    width: 20%; }
 
 .form-container {
   width: 40%; }

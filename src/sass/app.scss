@@ -78,7 +78,7 @@
   background-color: #fff;
 }
 
-.task-detail, .task-detail__text-box, .tasks-controll-box, .sort-btn {
+.task-detail, .task-detail__text-box, .tasks-controll-box {
   display: flex;
 }
 
@@ -162,17 +162,8 @@
 .tasks-controll-box {
   border-radius: 0 0 5px 5px;
   & .sort-btn {
-    width: 50%;
-    justify-content: space-evenly;
-    & .soon {
-      background-color: #d65a5a;
-    }
-    & .late {
-      background-color: #5353b6;
-    }
-    & .default-btn {
-      width: 45%;
-    }
+    background-color: #d65a5a;
+    width: 20%;
   }
 }
 

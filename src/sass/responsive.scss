@@ -40,24 +40,16 @@
   }
 
   .tasks-controll-box {
-    justify-content: center;
+    justify-content:space-evenly;
     & .clean-all-task {
       width: 45%;
     }
     & .sort-btn {
-      display: block;
-      width: 45%;
-      & .default-btn {
-        width: 70%;
-        float: right;
-        &:first-child {
-          margin-bottom: 10px;
-        }
-      }
+      width: 30%;
     }
   }
   
   .message {
-    width: 100%;
+    width: 95%;
   }
 }

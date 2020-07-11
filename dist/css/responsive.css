@@ -25,16 +25,10 @@
   .tasks-list, .tasks-controll-box, .task-count {
     padding: 20px 5px; }
   .tasks-controll-box {
-    justify-content: center; }
+    justify-content: space-evenly; }
     .tasks-controll-box .clean-all-task {
       width: 45%; }
     .tasks-controll-box .sort-btn {
-      display: block;
-      width: 45%; }
-      .tasks-controll-box .sort-btn .default-btn {
-        width: 70%;
-        float: right; }
-        .tasks-controll-box .sort-btn .default-btn:first-child {
-          margin-bottom: 10px; }
+      width: 30%; }
   .message {
-    width: 100%; } }
+    width: 95%; } }
