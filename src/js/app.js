@@ -62,11 +62,21 @@ $(function () {
     }
   });
 
-  $('.sort-btn').click(function () {
+  $('.sort-deadline').click(function () {
     if (taskArray.length === 0) {
       return false;
     } else {
       sortSoon();
+      saveStorage();
+      showAllTask();
+    }
+  });
+
+  $('.sort-priority').click(function () {
+    if (taskArray.length === 0) {
+      return false;
+    } else {
+      sortPriority();
       saveStorage();
       showAllTask();
     }
@@ -95,9 +105,9 @@ $(function () {
   }
 
   function judgePriority() {
-    $('.priority-text:contains("高")').css('color', 'rgb(199, 12, 12)');
-    $('.priority-text:contains("中")').css('color', 'rgb(231, 180, 39)');
-    $('.priority-text:contains("低")').css('color', '#5353b6');
+    $('.priority-text:contains("3")').text('高').css('color', 'rgb(199, 12, 12)');
+    $('.priority-text:contains("2")').text('中').css('color', 'rgb(231, 180, 39)');
+    $('.priority-text:contains("1")').text('低').css('color', '#5353b6');
   }
 
   function saveTask(receivedTask, receivedDeadline, receivedPriority) {
@@ -151,11 +161,16 @@ $(function () {
   }
 
   function sortSoon() {
-    let soon = taskArray.sort(function(a, b) {
+    taskArray.sort(function(a, b) {
       if(a.deadline < b.deadline) return -1;
       if(a.deadline > b.deadline) return +1;
       return 0;
     });
-    taskArray = soon;
+  }
+
+  function sortPriority() {
+    taskArray.sort(function(a, b) {
+      return b.priority - a.priority;
+    })
   }
 });
