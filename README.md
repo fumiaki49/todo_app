@@ -1,4 +1,5 @@
 # ToDoアプリ
+- 制作期間: 約２週間
 - URL: https://fumiaki49.github.io/todo_app/dist/index.html
 
 ## 概要
