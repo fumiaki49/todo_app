@@ -156,7 +156,7 @@ $(function () {
 
   function showMessage() {
     $('.tasks-list').empty();
-    let message = `<li class ="message is-align-center">タスクはありません。フォームからタスクを作成しましょう！</li>`
+    let message = `<li class ="message is-align-center">タスクはありません。フォームからタスクを作成しましょう！</li>`;
     $('.tasks-list').append(message);
   }
 
@@ -171,6 +171,6 @@ $(function () {
   function sortPriority() {
     taskArray.sort(function(a, b) {
       return b.priority - a.priority;
-    })
+    });
   }
 });
