@@ -159,8 +159,12 @@
   border-radius: 0 0 5px 5px;
   & .sort-btn {
     width: 50%;
+    justify-content: center;
     & .default-btn {
       width: 45%;
+      &:last-child {
+        margin-left: 5px;
+      }
     }
     & .sort-deadline, .sort-priority {
       background-color: #d65a5a;

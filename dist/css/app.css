@@ -120,9 +120,12 @@
 .tasks-controll-box {
   border-radius: 0 0 5px 5px; }
   .tasks-controll-box .sort-btn {
-    width: 50%; }
+    width: 50%;
+    justify-content: center; }
     .tasks-controll-box .sort-btn .default-btn {
       width: 45%; }
+      .tasks-controll-box .sort-btn .default-btn:last-child {
+        margin-left: 5px; }
     .tasks-controll-box .sort-btn .sort-deadline, .tasks-controll-box .sort-btn .sort-priority {
       background-color: #d65a5a; }
 
