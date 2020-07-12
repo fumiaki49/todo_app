@@ -44,15 +44,15 @@
                 <p class="form-title strong">優先度</p>
                 <div class="add-task-form__input-box__btn-box">
                   <label class="select-priority">
-                    <input type="radio" name="priority" value="高" checked required>
+                    <input type="radio" name="priority" value="3" checked required>
                     <span class="cancel-select">高</span>
                   </label>
                   <label class="select-priority">
-                    <input type="radio" name="priority" value="中">
+                    <input type="radio" name="priority" value="2">
                     <span class="cancel-select">中</span>
                   </label>
                   <label class="select-priority">
-                    <input type="radio" name="priority" value="低">
+                    <input type="radio" name="priority" value="1">
                     <span class="cancel-select">低</span>
                   </label>
                 </div>
@@ -70,7 +70,10 @@
             <ul class="tasks-list"></ul>
             <div class="tasks-controll-box">
               <button class="clean-all-task default-btn">全てのタスクを削除</button>
-              <button class="default-btn sort-btn">期限が近い順</button>
+              <div class="sort-btn">
+                <button class="default-btn sort-deadline">期限が近い順</button>
+                <button class="default-btn sort-priority">優先度順</button>
+              </div>
             </div>
           </div>
         </div>

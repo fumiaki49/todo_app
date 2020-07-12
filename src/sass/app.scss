@@ -78,11 +78,11 @@
   background-color: #fff;
 }
 
-.task-detail, .task-detail__text-box, .tasks-controll-box {
+.task-detail, .task-detail__text-box, .tasks-controll-box, .contents-box, .sort-btn {
   display: flex;
 }
 
-.contents-box, .tasks-controll-box, .task-detail {
+.contents-box, .tasks-controll-box, .task-detail, .sort-btn {
   justify-content: space-between;
 }
 
@@ -107,10 +107,6 @@
 //メイン
 .main-container {
   padding-top: 3%;
-}
-
-.contents-box {
-  display: flex;
 }
 
 //タスク表示欄
@@ -162,8 +158,13 @@
 .tasks-controll-box {
   border-radius: 0 0 5px 5px;
   & .sort-btn {
-    background-color: #d65a5a;
-    width: 20%;
+    width: 50%;
+    & .default-btn {
+      width: 45%;
+    }
+    & .sort-deadline, .sort-priority {
+      background-color: #d65a5a;
+    }
   }
 }
 

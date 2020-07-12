@@ -23,12 +23,20 @@
     width: 100%;
     margin: unset; }
   .tasks-list, .tasks-controll-box, .task-count {
-    padding: 20px 5px; }
+    padding: 20px 10px; }
   .tasks-controll-box {
     justify-content: space-evenly; }
     .tasks-controll-box .clean-all-task {
       width: 45%; }
     .tasks-controll-box .sort-btn {
-      width: 30%; }
+      display: block;
+      justify-content: unset;
+      text-align: right; }
+      .tasks-controll-box .sort-btn .default-btn {
+        width: 80%;
+        height: 25px;
+        line-height: 25px; }
+        .tasks-controll-box .sort-btn .default-btn:last-child {
+          margin-top: 5px; }
   .message {
     width: 95%; } }

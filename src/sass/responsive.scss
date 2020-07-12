@@ -36,7 +36,7 @@
   }
 
   .tasks-list, .tasks-controll-box, .task-count {
-    padding: 20px 5px;
+    padding: 20px 10px;
   }
 
   .tasks-controll-box {
@@ -45,7 +45,17 @@
       width: 45%;
     }
     & .sort-btn {
-      width: 30%;
+      display: block;
+      justify-content: unset;
+      text-align: right;
+      & .default-btn {
+        width: 80%;
+        height: 25px;
+        line-height: 25px;
+        &:last-child {
+          margin-top: 5px;
+        }
+      }
     }
   }
   
