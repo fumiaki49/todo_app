@@ -24,6 +24,12 @@
     margin: unset; }
   .tasks-list, .tasks-controll-box, .task-count {
     padding: 20px 10px; }
+  .task-card .task-detail {
+    font-size: 12px; }
+    .task-card .task-detail .default-btn {
+      width: 35px;
+      height: 25px;
+      line-height: 25px; }
   .tasks-controll-box {
     justify-content: space-evenly; }
     .tasks-controll-box .clean-all-task {

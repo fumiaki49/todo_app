@@ -39,6 +39,17 @@
     padding: 20px 10px;
   }
 
+  .task-card {
+    & .task-detail {
+      font-size: 12px;
+      & .default-btn {
+        width: 35px;
+        height: 25px;
+        line-height: 25px;
+      }
+    }
+  }
+
   .tasks-controll-box {
     justify-content:space-evenly;
     & .clean-all-task {
