@@ -1,6 +1,7 @@
 .main-page {
   background-color: #fdceb1;
-  color: #fff; }
+  color: #fff;
+  font-family: 'Lato', sans-serif; }
 
 .inner {
   width: 1350px; }
