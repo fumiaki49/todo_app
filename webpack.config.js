@@ -1,10 +1,10 @@
 module.exports = {
   mode: 'production',
   watch: true,
-  entry: './src/js/app.js',
+  entry: './src/js/index.js',
   output: {
     path: `${__dirname}/dist/js`,
-    filename: 'converted_app.js'
+    filename: 'main.js'
   },
   module: {
     rules: [
