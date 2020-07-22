@@ -1,7 +1,6 @@
 $(function () {
   let taskArray = [];
   let storageKey = 'savedTask';
-  let storageData = JSON.parse(localStorage.getItem(storageKey));
   let getTaskCard;
   
   readStorage();
@@ -82,6 +81,7 @@ $(function () {
     }
   });
 
+
   function addList(receivedTask, receivedDeadline, receivedPriority) {
     let taskCardTemplate = `<li class="task-card">
                               <div class="task-name card-inner">${receivedTask}</div>
@@ -103,30 +103,31 @@ $(function () {
     $('.tasks-list').append(taskCardTemplate);
     judgePriority();
   }
-
+  
   function judgePriority() {
     $('.priority-text:contains("3")').text('高').css('color', 'rgb(199, 12, 12)');
     $('.priority-text:contains("2")').text('中').css('color', 'rgb(231, 180, 39)');
     $('.priority-text:contains("1")').text('低').css('color', '#5353b6');
   }
-
+  
   function saveTask(receivedTask, receivedDeadline, receivedPriority) {
     let taskObject = {
       task: receivedTask, 
       deadline: receivedDeadline,
       priority: receivedPriority
     };
-
+  
     taskArray.push(taskObject);
     saveStorage();
     countTask();
   }
-
+  
   function saveStorage() {
     localStorage.setItem(storageKey, JSON.stringify(taskArray));
   }
-
+  
   function readStorage() {
+    let storageData = JSON.parse(localStorage.getItem(storageKey));
     if(storageData === null) {
       showMessage();
     } else {
@@ -135,31 +136,31 @@ $(function () {
     }
     countTask();
   }
-
+  
   function showAllTask() {
     $('.tasks-list').empty();
     $.each(taskArray, function(index, data) {
       addList(data.task, data.deadline, data.priority);
     });
   }
-
+  
   function countTask() {
     let showCount = `<p><span class="strong">タスクの合計 :</span> ${taskArray.length}</p>`;
     $('.task-count p').remove();
     $('.task-count').append(showCount);
   }
-
+  
   function clean() {
     localStorage.clear();
     taskArray = [];
   }
-
+  
   function showMessage() {
     $('.tasks-list').empty();
     let message = `<li class ="message is-align-center">タスクはありません。フォームからタスクを作成しましょう！</li>`;
     $('.tasks-list').append(message);
   }
-
+  
   function sortSoon() {
     taskArray.sort(function(a, b) {
       if(a.deadline < b.deadline) return -1;
@@ -167,7 +168,7 @@ $(function () {
       return 0;
     });
   }
-
+  
   function sortPriority() {
     taskArray.sort(function(a, b) {
       return b.priority - a.priority;
