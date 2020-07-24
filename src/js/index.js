@@ -1,6 +1,8 @@
+import{setDate}from "./date";
+
 $(function () {
   let taskArray = [];
-  
+  setDate();
   readStorage();
 
   $('form').submit(function(e) {
