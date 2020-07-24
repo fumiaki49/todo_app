@@ -1,7 +1,5 @@
 $(function () {
   let taskArray = [];
-  let storageKey = 'savedTask';
-  let getTaskCard;
   
   readStorage();
 
@@ -19,7 +17,7 @@ $(function () {
   });
 
   $(document).on('click', '.complete-btn', function() {
-    getTaskCard = $(this).closest('.task-card');
+    let getTaskCard = $(this).closest('.task-card');
     let taskCardIndex = getTaskCard.index();
 
     getTaskCard.remove();
@@ -27,7 +25,6 @@ $(function () {
     saveStorage();
     if(taskArray.length === 0) {
       clean();
-      showMessage();
     }
     countTask();
   });
@@ -51,10 +48,8 @@ $(function () {
             icon: "success",
             text: "削除しました。"
           });
-          //tasks-listの子要素削除、localStorage、taskArrayのデータを初期化
           $('.tasks-list').empty();
           clean();
-          showMessage();
           countTask();
         }
       });
@@ -66,8 +61,6 @@ $(function () {
       return false;
     } else {
       sortSoon();
-      saveStorage();
-      showAllTask();
     }
   });
 
@@ -76,8 +69,6 @@ $(function () {
       return false;
     } else {
       sortPriority();
-      saveStorage();
-      showAllTask();
     }
   });
 
@@ -123,15 +114,15 @@ $(function () {
   }
   
   function saveStorage() {
-    localStorage.setItem(storageKey, JSON.stringify(taskArray));
+    localStorage.setItem('savedTask', JSON.stringify(taskArray));
   }
   
   function readStorage() {
-    let storageData = JSON.parse(localStorage.getItem(storageKey));
+    let storageData = JSON.parse(localStorage.getItem('savedTask'));
     if(storageData === null) {
       showMessage();
     } else {
-      taskArray=storageData; //ページを読み込んだ際に、既にlocalStorageにデータがあればtaskArrayに代入
+      taskArray = storageData;
       showAllTask();
     }
     countTask();
@@ -153,6 +144,7 @@ $(function () {
   function clean() {
     localStorage.clear();
     taskArray = [];
+    showMessage();
   }
   
   function showMessage() {
@@ -167,11 +159,15 @@ $(function () {
       if(a.deadline > b.deadline) return +1;
       return 0;
     });
+    saveStorage();
+    showAllTask();
   }
   
   function sortPriority() {
     taskArray.sort(function(a, b) {
       return b.priority - a.priority;
     });
+    saveStorage();
+    showAllTask();
   }
 });
