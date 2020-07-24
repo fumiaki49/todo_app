@@ -1,6 +1,7 @@
 .main-page {
   background-color: #fdceb1;
-  color: #fff; }
+  color: #fff;
+  font-family: 'Lato', sans-serif; }
 
 .inner {
   width: 1350px; }
@@ -142,6 +143,8 @@
       margin-top: 0; }
     .add-task-form__input-box__task input {
       width: 100%; }
+    .add-task-form__input-box__deadline input {
+      width: 30%; }
     .add-task-form__input-box__btn-box .select-priority {
       cursor: pointer;
       margin-left: 10px; }

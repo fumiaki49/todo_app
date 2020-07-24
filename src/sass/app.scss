@@ -1,6 +1,7 @@
 .main-page {
   background-color: #fdceb1;
   color: #fff;
+  font-family: 'Lato', sans-serif;
 }
 
 .inner {
@@ -190,6 +191,9 @@
     }
     &__task input {
       width: 100%;
+    }
+    &__deadline input {
+      width: 30%;
     }
     &__btn-box {
       & .select-priority {
