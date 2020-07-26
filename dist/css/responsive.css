@@ -11,7 +11,9 @@
 
 @media screen and (max-width: 896px) and (min-width: 481px), (max-width: 480px) {
   .task-container {
-    font-size: 13px; } }
+    font-size: 13px; }
+  .add-task-form__input-box__deadline input {
+    width: unset; } }
 
 @media screen and (max-width: 480px) {
   .header {
